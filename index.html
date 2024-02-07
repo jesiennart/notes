@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/d7108e48b2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="menu">
+      <button class="add-note">Add notes</button>
+      <button class="delete">Delete</button>
+    </div>
+    <div class="popup">
+      <div class="title">Choose the type of note.</div>
+      <select name="noteType" id="noteType">
+        <option value="Shopping">Shopping</option>
+        <option value="Work">Work</option>
+        <option value="Study">Study</option>
+        <option value="Personal">Personal</option>
+        <option value="Other">Other</option>
+      </select>
+      <textarea
+        name="note"
+        id="text-note"
+        cols="30"
+        rows="10"
+        placeholder="Create a note"
+      ></textarea>
+      <button class="add">Add</button>
+      <p class="error"></p>
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+    <div class="notes"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
