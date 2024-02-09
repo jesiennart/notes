@@ -16,9 +16,9 @@ const hidePopup = () => {
   popup.style.visibility = "hidden";
 };
 const noteError = () => {
-  if (note.value === "") {
+  if (note.value === "" || noteType.value === '') {
     error.style.display = "block";
-    error.textContent = "Create note!";
+    error.textContent = "Create note and choose type of note!";
   } else {
     error.style.display = "none";
     addNewNote();
@@ -46,6 +46,11 @@ const addNewNote = () => {
     divNote.appendChild(noteTittle);
     divNote.appendChild(noteText);
     notes.appendChild(divNote);
+
+    const delNote = () => {
+        notes.removeChild(divNote)
+    }
+icon.addEventListener("click", delNote);
   
     noteType.value = '';
     note.value = '';
@@ -62,12 +67,8 @@ const deleteNotes = () => {
     
 }
 
-    const delNote = () => {
-        notes.removeChild(divNote)
-    }
-
 addNotes.addEventListener("click", showPopup);
 cross.addEventListener("click", hidePopup);
 addBtn.addEventListener("click", noteError);
 deleteBtn.addEventListener("click", deleteNotes);
-icon.addEventListener("click", delNote);
+

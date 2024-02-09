@@ -7,7 +7,26 @@
 body {
   position: relative;
   min-height: 100vh;
-}
+    --s: 146px; /* control the size*/
+    --c1: #f4bbf9;
+    --c2: #f5d1f0;
+    
+    --c:var(--c1) calc(100% - 2px),#0000;
+    --r:calc(2.414*var(--s));
+    --p:calc(1.414*var(--s));
+    --g:radial-gradient(var(--s),var(--c));
+    background:
+      radial-gradient(var(--r) at 0    0   ,var(--c)),
+      radial-gradient(var(--r) at 0    100%,var(--c)),
+      radial-gradient(var(--r) at 100% 0   ,var(--c)),
+      radial-gradient(var(--r) at 100% 100%,var(--c)),
+      var(--g),var(--g),var(--g),var(--g) var(--c2);
+    background-position: 
+      var(--r) var(--r),0 var(--p),var(--p) 0,
+      calc(-1*var(--s)) calc(-1*var(--s));
+    background-size: calc(2*var(--r)) calc(2*var(--r));
+  }
+
 
 .menu {
   display: flex;
@@ -21,7 +40,10 @@ body {
   height: 50px;
   border: 2px solid white;
   border-radius: 10px;
-  background-color: lightsteelblue;
+  background-color: white;
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+-moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 }
 
 button {
@@ -30,6 +52,7 @@ button {
   border: none;
   border-radius: 10px;
   font-weight: bold;
+  background-color: #f5d1f0;
   cursor: pointer;
 }
 
@@ -53,9 +76,12 @@ button {
   max-height: 600px;
   max-width: 500px;
   padding: 1rem;
-  border: 2px solid black;
+  border: 2px solid rgb(255, 233, 166);
   border-radius: 10px;
-  background-color: lightgreen;
+  background-color: rgb(253, 243, 195);
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+-moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   z-index: 2;
 }
 
@@ -94,6 +120,7 @@ button {
 
 .error {
   display: none;
+  font-weight: bold;
   color: red;
 }
 
@@ -102,7 +129,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  height: 100vh;
+  height: auto;
   width: 100vw;
   top: 15%;
   left: 5%;
@@ -111,20 +138,31 @@ button {
 .container {
     position: relative;
   width: 200px;
-  height: 200px;
+  height: auto;
   margin-right: 1rem;
-  border: 2px solid goldenrod;
+  margin-bottom: 1rem;
+  border: 2px solid rgb(226, 106, 245);
   border-radius: 10px;
-  background-color: lightgoldenrodyellow;
+  background-color: white;
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+-moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 }
 
 .type {
-    margin: 1rem;
+    margin: 2rem 1rem 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
+    border: 2px solid #ab01ba;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    color: #ab01ba;
 }
 
 .text {
     margin: 1rem;
+    font-size: 1.1rem;
   color: black;
 }
 
